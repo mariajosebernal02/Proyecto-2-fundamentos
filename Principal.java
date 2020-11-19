@@ -1,7 +1,20 @@
 import java.util.Scanner;
+import java.io.File; 
 public class Principal{
     public static void main (String [] args){
-        System.out.println("Menu");
+        System.out.println("Menu:");
+        System.out.println("0. Detener programa");
+        System.out.println("1. Crear un vehiculo");
+        System.out.println("2. Mostrar info de vehiculos");
+        System.out.println("3. Mostrar cantidad de vehiculos");
+        System.out.println("4. Mostrar info de vehiculos verdes");
+        System.out.println("5. Info de vehiculo por ID");
+        System.out.println("6. Agregar sensor a vehiculo por ID");
+        System.out.println("7. Mostrar sensores de vehiculo por ID");
+        System.out.println("8. Mostrar info sensores tipo temperatura");
+        System.out.println("9. Mostrar info vehiculo con mas sensores");
+        System.out.println("10. Crear vehiculos con txt");
+        System.out.println("666. Mostrar sensores temperatura ordenados por valor");
         Principal.mostrarMenu();
     }
 
@@ -70,7 +83,7 @@ public class Principal{
                 if(v1.getColor()==null){
                     System.out.println("Error: No existe un vehiculo con Id " + id);
                 } else{
-                    System.out.println("Sensores del vehiculo con Id " + id);
+                    System.out.println("Sensores del vehiculo con Id " + id + " (tipo, valor):");
                     System.out.println(Sensor.toStringSensores(v1));
                 }
             } else if (num==8){
@@ -80,7 +93,19 @@ public class Principal{
                 System.out.println("Vehiculo con mayor cantidad de sensores /modelo, marca, valor comercial, color(Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.vehiculoMasSensores());
             } else if (num==10){
-                
+                File file = new File("vehiculos.txt");
+                try{
+                    Scanner input = new Scanner(file);
+                    String line;
+                    while(input.hasNextLine()){
+                        line = input.nextLine();
+                        String[] parts = line.split(",");
+                        Vehiculo v1 = new Vehiculo(Integer.parseInt(parts[0]), parts[1], Double.parseDouble(parts[2]), parts[3]);
+                    }
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+
             } else if (num==666){
                 System.out.println("Sensores de tipo temperatura ordenados por valor (tipo, valor): ");
                 System.out.println(Sensor.toStringTemperaturasOrdenados(Sensor.SensoresTemperaturasOrdenados()));

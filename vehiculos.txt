@@ -1,0 +1,5 @@
+2019,Mazda,100.5,azul
+2016,Renault,20.34,gris
+1999,Mercedes,8848,verde
+2017,Ferrari,927483,negro
+2004,Toyota,304.3,blanco

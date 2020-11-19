@@ -94,6 +94,9 @@ public class Sensor{
         for(int i=0; i<temperaturas.size(); i++){
             datosOrdenados = datosOrdenados + (temperaturas.get(i).toString());
         }
+        if(datosOrdenados.equals("")){
+            datosOrdenados = "no hay sensores de tipo temperatura";
+        }
         return datosOrdenados;
     }
 
