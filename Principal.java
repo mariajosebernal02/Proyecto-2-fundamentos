@@ -37,7 +37,7 @@ public class Principal{
                 String co = scan.next();
                 Vehiculo v = new Vehiculo(mo, ma, va, co);
             } else if (num==2){
-                System.out.println("Datos Vehiculos /modelo, marca, valor comercial, color(Sensor: tipo, valor)/: ");
+                System.out.println("Datos Vehiculos /modelo, marca, valor comercial, color (Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.toStringVehiculos());
             } else if (num==3){
                 System.out.println("Cantidad de vehículos: ");
@@ -46,7 +46,7 @@ public class Principal{
                 System.out.println("Vehiculos color verde /modelo, marca, valor comercial, color(Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.vehiculosVerdes());
             } else if (num==5){
-                System.out.println("Ingrese Id de vehiculo: ");
+                System.out.println("Ingrese ID de vehiculo: ");
                 int id = scan.nextInt();
                 boolean v = false;
                 for(int i=0; i<Vehiculo.vehiculos.size(); i++){
@@ -56,10 +56,10 @@ public class Principal{
                     }
                 }
                 if(v==false){
-                    System.out.println("No existe un vehiculo con Id " + id);
+                    System.out.println("No existe un vehiculo con ID " + id);
                 }
             } else if (num==6){
-                System.out.println("Ingrese Id de vehiculo existente: ");
+                System.out.println("Ingrese ID de vehiculo existente: ");
                 int id = scan.nextInt();
                 Vehiculo v1 = Vehiculo.obtenerVehiculoPorId(id);
                 Vehiculo.vehiculos.remove(Vehiculo.vehiculos.size()-1);
@@ -114,4 +114,3 @@ public class Principal{
         }
     }
 }
-
