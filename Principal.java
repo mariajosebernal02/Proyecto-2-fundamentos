@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 import java.io.File; 
 public class Principal{
     public static void main (String [] args){
@@ -37,13 +37,13 @@ public class Principal{
                 String co = scan.next();
                 Vehiculo v = new Vehiculo(mo, ma, va, co);
             } else if (num==2){
-                System.out.println("Datos Vehiculos /modelo, marca, valor comercial, color (Sensor: tipo, valor)/: ");
+                System.out.println("Datos Vehiculos /ID, modelo, marca, valor comercial, color (Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.toStringVehiculos());
             } else if (num==3){
                 System.out.println("Cantidad de vehículos: ");
                 System.out.println(Vehiculo.cantidadVehiculos());
             } else if (num==4){
-                System.out.println("Vehiculos color verde /modelo, marca, valor comercial, color(Sensor: tipo, valor)/: ");
+                System.out.println("Vehiculos color verde /ID, modelo, marca, valor comercial, color (Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.vehiculosVerdes());
             } else if (num==5){
                 System.out.println("Ingrese ID de vehiculo: ");
@@ -65,7 +65,7 @@ public class Principal{
                 Vehiculo.vehiculos.remove(Vehiculo.vehiculos.size()-1);
                 Vehiculo.idActual--;
                 if(v1.getColor()==null){
-                    System.out.println("Error: No existe un vehiculo con Id " + id);
+                    System.out.println("Error: No existe un vehiculo con ID " + id);
                 } else{
                     System.out.println("Ingrese tipo: ");
                     String ti = scan.next();
@@ -75,22 +75,22 @@ public class Principal{
                     Vehiculo.vehiculos.get(id).anadirSensor(s);
                 }
             } else if (num==7){
-                System.out.println("Ingrese Id de vehiculo existente: ");
+                System.out.println("Ingrese ID de vehiculo existente: ");
                 int id = scan.nextInt();
                 Vehiculo v1 = Vehiculo.obtenerVehiculoPorId(id);
                 Vehiculo.vehiculos.remove(Vehiculo.vehiculos.size()-1);
                 Vehiculo.idActual--;
                 if(v1.getColor()==null){
-                    System.out.println("Error: No existe un vehiculo con Id " + id);
+                    System.out.println("Error: No existe un vehiculo con ID " + id);
                 } else{
-                    System.out.println("Sensores del vehiculo con Id " + id + " (tipo, valor):");
+                    System.out.println("Sensores del vehiculo con ID " + id + " (tipo, valor):");
                     System.out.println(Sensor.toStringSensores(v1));
                 }
             } else if (num==8){
                 System.out.println("Sensores de tipo temperatura (tipo, valor): ");
                 System.out.println(Sensor.sensoresTemperatura());
             } else if (num==9){
-                System.out.println("Vehiculo con mayor cantidad de sensores /modelo, marca, valor comercial, color(Sensor: tipo, valor)/: ");
+                System.out.println("Vehiculo con mayor cantidad de sensores /ID, modelo, marca, valor comercial, color (Sensor: tipo, valor)/: ");
                 System.out.println(Vehiculo.vehiculoMasSensores());
             } else if (num==10){
                 File file = new File("vehiculos.txt");
